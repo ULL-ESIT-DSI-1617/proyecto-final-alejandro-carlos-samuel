@@ -1,0 +1,20 @@
+{
+  "name": "mylib",
+  "version": "0.0.0",
+  "description": "Final project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ULL-ESIT-DSI-1617/proyecto-final-alejandro-carlos-samuel.git"
+  },
+  "author": "Alejandro Arzola <alu0100814712@ull.edu.es> (https://aleag.github.io/)",
+  "contributors": [ "Carlos de Armas <alu0100816167@ull.edu.es> (http://alu0100816167.github.io)", "Samuel Valcárcel <samuvalcarcel@gmail.com> (http://cosaca.github.io)"],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ULL-ESIT-DSI-1617/proyecto-final-alejandro-carlos-samuel/issues"
+  },
+  "homepage": "https://github.com/ULL-ESIT-DSI-1617/proyecto-final-alejandro-carlos-samuel#readme"
+}
