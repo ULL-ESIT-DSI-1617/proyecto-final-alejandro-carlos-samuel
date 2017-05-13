@@ -1016,11 +1016,11 @@
 }
 
 .teal-text.text-lighten-2 {
-  color: #4db6ac !important;
+  color: #00ffe7 !important;
 }
 
 .teal.lighten-1 {
-  background-color: #26a69a !important;
+  background-color: #19d0bf !important;
 }
 
 .teal-text.text-lighten-1 {
@@ -4241,6 +4241,7 @@ nav .button-collapse i {
 }
 
 nav .brand-logo {
+  letter-spacing: 7px;
   position: absolute;
   color: #fff;
   display: inline-block;
