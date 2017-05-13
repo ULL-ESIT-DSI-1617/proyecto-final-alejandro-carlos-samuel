@@ -1,0 +1,14 @@
+.card-avatar img {
+    height: 150px;
+    width: 150px;
+    border-radius: 75px;
+    margin-top: 10px;
+}
+
+.card-content a {
+  color: #444;
+}
+
+.material-icons {
+  color: #26a69a;
+}
