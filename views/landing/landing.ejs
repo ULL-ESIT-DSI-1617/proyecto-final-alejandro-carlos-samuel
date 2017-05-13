@@ -4,47 +4,37 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-    <title>MyLIB</title>
+    <title>MyLIB - Tu biblioteca en la nube</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link href="../../public/css/tutu.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="../../public/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-    <link href="../../public/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/personal.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
-    <nav class="white" role="navigation">
-        <div class="nav-wrapper container">
-            <a id="logo-container" href="#" class="brand-logo">MyLIB</a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#servicio">Servicio</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#equipo">Equipo</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="#">Iniciar sesión</a></li>
-            </ul>
+    <div class="navbar-fixed">
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="/" class="brand-logo">MyLIB</a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="#servicio">Servicio</a></li>
+                    <li><a href="#equipo">Equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="/login">Iniciar Sesión</a></li>
+                </ul>
 
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#servicio">Servicio</a></li>
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#equipo">Equipo</a></li>
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-                <li><a href="#">Iniciar sesión</a></li>
-            </ul>
-            <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-        </div>
-    </nav>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="#servicio">Servicio</a></li>
+                    <li><a href="#equipo">Equipo</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                    <li><a href="/login">Iniciar Sesión</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+    </div>
 
     <div id="index-banner" class="parallax-container">
         <div class="section no-pad-bot">
@@ -55,13 +45,13 @@
                     <h5 class="header col s12 light">Organiza tus libros favoritos de la manera más sencilla</h5>
                 </div>
                 <div class="row center">
-                    <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Regístrate</a>
+                    <a href="/register" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Regístrate</a>
                 </div>
                 <br><br>
 
             </div>
         </div>
-        <div class="parallax"><img src="../../public/images/libro2.jpg" alt="Unsplashed background img 1"></div>
+        <div class="parallax"><img src="images/libro2.jpg" alt="Unsplashed background img 1"></div>
     </div>
 
 
@@ -103,7 +93,7 @@
 
 
     <div class="parallax-container valign-wrapper">
-        <div class="parallax"><img src="../../public/images/libro1.jpg" alt="Unsplashed background img 2"></div>
+        <div class="parallax"><img src="images/libro1.jpg" alt="Unsplashed background img 2"></div>
     </div>
 
     <div class="container">
@@ -116,7 +106,7 @@
                             <div class="col s12 m4">
                                 <div class="card card-avatar">
                                     <div class="waves-effect waves-block waves-light">
-                                        <img class="activator" src="../../public/images/dev1.jpg">
+                                        <img class="activator" src="images/dev1.jpg">
                                     </div>
                                     <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4">Alejandro Arzola <br/>
@@ -131,15 +121,15 @@
                             <div class="col s12 m4">
                                 <div class="card card-avatar">
                                     <div class="waves-effect waves-block waves-light">
-                                        <img class="activator" src="../../public/images/dev3.jpg">
+                                        <img class="activator" src="images/dev3.jpg">
                                     </div>
                                     <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4">
                                           Carlos de Armas <br/>
                                           <small><em><a class="red-text text-darken-1" href="#">Developer</a></em></small></span>
                                         <p>
-                                          <a href="https://github.com/alu0100816167"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
-                                          <a href="https://alu0100816167.github.io/"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a>
+                                            <a href="https://github.com/alu0100816167"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                                            <a href="https://alu0100816167.github.io/"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a>
                                         </p>
                                     </div>
                                 </div>
@@ -147,14 +137,14 @@
                             <div class="col s12 m4">
                                 <div class="card card-avatar">
                                     <div class="waves-effect waves-block waves-light">
-                                        <img class="activator" src="../../public/images/dev2.jpg">
+                                        <img class="activator" src="images/dev2.jpg">
                                     </div>
                                     <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4">Samuel Valcárcel<br/>
                                           <small><em><a class="red-text text-darken-1" href="#">Developer</a></em></small></span>
                                         <p>
-                                          <a href="https://github.com/cosaca"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
-                                          <a href="https://cosaca.github.io/"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a>
+                                            <a href="https://github.com/cosaca"><i class="fa fa-github fa-3x" aria-hidden="true"></i></a>
+                                            <a href="https://cosaca.github.io/"><i class="fa fa-user fa-3x" aria-hidden="true"></i></a>
                                         </p>
                                     </div>
                                 </div>
@@ -188,8 +178,8 @@
     <!--  Scripts-->
     <script src="https://use.fontawesome.com/f31f9c5054.js"></script>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script src="../../public/js/materialize.js"></script>
-    <script src="../../public/js/init.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 
 </body>
 

@@ -10,5 +10,9 @@
 }
 
 .material-icons {
-  color: #26a69a;
+  color: #19d0bf;
+}
+
+#servicio, #equipo {
+  padding-top: 6rem;
 }
