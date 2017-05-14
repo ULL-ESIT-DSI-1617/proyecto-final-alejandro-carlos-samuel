@@ -5,7 +5,7 @@
 1. Clonar el repo
 2. Ejectuar `npm install`
 3. Ejectuar `npm run start`
-4. Acceder desde un navegador a `localhost:4000`
+4. Acceder desde un navegador a `localhost:3000`
 
 # Autores
 
@@ -18,13 +18,15 @@
 ├── LICENSE
 ├── README.md
 ├── app
-│   ├── models 
-│   │   └── users_db.js -> definimos la base de datos
-│   └── routes.js -> rutas de la app
-├── config -> irá configuración de passport
+│   ├── models
+│   │   └── users_db.js -> definición de la base de datos
+│   └── routes.js -> rutas de la aplicación
+├── config
+│   ├── auth.js -> se almacenan los tokens de acceso (facebook, twitter, etc.)
+│   └── passport.js -> configuración de passport
 ├── package.json
-├── server.js
-└── views
+├── server.js -> servidor express
+└── views -> vistas
     ├── landing
     │   └── landing.ejs
     └── login
