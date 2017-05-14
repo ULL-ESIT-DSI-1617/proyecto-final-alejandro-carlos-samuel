@@ -17,22 +17,45 @@
   padding-top: 6rem;
 }
 
-#tarjeta {
+#tarjeta_login {
   margin-top: 40px;
   height: 500px;
 }
 
-#boton_twitter {
+#tarjeta_registro {
+  margin-top: 40px;
+  height: 800px;
+}
+
+#boton_twitter_login {
   background-color: #1dadea;
   display: inline-block;
   margin-top: 50px;
   width: 100%;
 }
 
-#boton_google {
+#boton_google_login {
   background-color: #cf4332;
   display: inline-block;
   margin-top: 50px;
+  width: 100%;
+}
+
+#boton_twitter_registro {
+  background-color: #1dadea;
+  display: inline-block;
+  margin-top: 3px;
+  width: 100%;
+}
+
+#boton_google_registro {
+  background-color: #cf4332;
+  display: inline-block;
+  margin-top: 15px;
+  width: 100%;
+}
+
+#reg {
   width: 100%;
 }
 
@@ -40,4 +63,8 @@
   display: inline-block;
   padding: 10px;
   margin-top: 100px;
+}
+
+.center-btn {
+  text-align: center;
 }
