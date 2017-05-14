@@ -4,7 +4,6 @@ let path = require('path');
 let mongoose = require('mongoose');
 let passport = require('passport');
 let flash = require('connect-flash');
-
 let morgan = require('morgan');
 let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
@@ -33,9 +32,9 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+let routes = require('./app/routes.js')(passport); // las rutas del servidor con passport configurado
+app.use('/', routes);
 
-
-require('./app/routes.js')(app, passport); // las rutas
 
 let port = process.env.PORT || 3000;
 var server = app.listen(port, function() {
