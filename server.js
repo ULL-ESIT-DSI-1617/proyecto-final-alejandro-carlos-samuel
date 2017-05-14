@@ -14,6 +14,7 @@ mongoose.connect(dbConfig.url); //creamos la conexión con la base de datos
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+
 //app.set('port', process.env.PORT || 3000);
 require('./config/passport')(passport); // pass passport for configuration
 app.use(express.static('public'));
@@ -39,6 +40,5 @@ app.use('/', routes);
 
 let port = process.env.PORT || 3000;
 var server = app.listen(port, function() {
-
     console.log('MyLIB ejecutandose en localhost:%s', port);
 });

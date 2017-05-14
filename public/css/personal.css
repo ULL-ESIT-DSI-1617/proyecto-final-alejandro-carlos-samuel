@@ -17,9 +17,9 @@
   padding-top: 6rem;
 }
 
-
 .social-width {
     width: 30px !important;
+}
 
 #tarjeta_login {
   margin-top: 40px;
@@ -79,5 +79,23 @@
 
 .center-btn {
   text-align: center;
+}
 
+#exit {
+    color: #fff;
+}
+
+.btn {
+  background-color: #19d0bf;
+}
+
+#username {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  font-stretch: condensed;
+  font-size: 2.1rem;
+}
+
+label {
+  color: #444 !important;
 }
