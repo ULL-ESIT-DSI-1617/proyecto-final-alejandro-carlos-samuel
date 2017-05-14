@@ -2,6 +2,7 @@ let express = require('express');
 let app = express();
 let path = require('path');
 let mongoose = require('mongoose');
+let dbConfig = require('./config/db')
 let passport = require('passport');
 let flash = require('connect-flash');
 let morgan = require('morgan');
@@ -9,7 +10,7 @@ let cookieParser = require('cookie-parser');
 let bodyParser = require('body-parser');
 let session = require('express-session');
 
-mongoose.connect('mongodb://localhost/mylib'); //creamos la conexión con la base de datos
+mongoose.connect(dbConfig.url); //creamos la conexión con la base de datos
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
