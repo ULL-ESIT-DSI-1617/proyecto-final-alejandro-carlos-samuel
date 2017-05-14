@@ -1,6 +1,3 @@
-// config/auth.js
-
-// expose our config directly to our application using module.exports
 module.exports = {
 
     'facebookAuth': {
@@ -14,13 +11,18 @@ module.exports = {
     'twitterAuth': {
         'consumerKey': 'vOj3NTFOcmcptpZCCaEgXJ3YK',
         'consumerSecret': '9EYql6ndLCuClIt2ZMdgqplqWCwV2j6s1ZeCPoiIURmJwYbdBI',
-        'callbackURL': 'http://localhost:8080/auth/twitter/callback'
+        'callbackURL': 'http://127.0.0.1:3000/auth/twitter/callback'
     },
 
     'googleAuth': {
         'clientID': 'your-secret-clientID-here',
         'clientSecret': 'your-client-secret-here',
-        'callbackURL': 'http://localhost:8080/auth/google/callback'
-    }
+        'callbackURL': 'http://127.0.0.1:3000/auth/google/callback'
+    },
+    'githubAuth': {
+    'clientID': '67ba15200f38093705ca',
+    'clientSecret': '8d428eabc634fc6c6816c7f55bd7ecc7dcfd5cf0',
+    'callbackURL': "http://127.0.0.1:3000/auth/github/callback"
+  },
 
 };

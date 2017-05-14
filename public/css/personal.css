@@ -16,3 +16,7 @@
 #servicio, #equipo {
   padding-top: 6rem;
 }
+
+.social-width {
+    width: 30px !important;
+}
