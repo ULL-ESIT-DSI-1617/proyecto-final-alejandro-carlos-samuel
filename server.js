@@ -1,6 +1,9 @@
-var express = require('express');
-var app = express();
-var path = require('path');
+let express = require('express');
+let app = express();
+let path = require('path');
+let morgan = require('morgan');
+var mongoose = require('mongoose');
+
 let router = require('./app/routes')
 
 app.set('views', path.join(__dirname, 'views'));
@@ -8,6 +11,7 @@ app.set('view engine', 'ejs');
 //app.set('port', process.env.PORT || 3000);
 
 app.use(express.static('public'));
+app.use(morgan('dev')); //ver informacion de las peticiones en la consola
 app.use('/', router);
 
 let port = process.env.PORT || 3000;
