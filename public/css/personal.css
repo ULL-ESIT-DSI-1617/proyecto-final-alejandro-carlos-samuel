@@ -59,6 +59,14 @@
   width: 100%;
 }
 
+#login {
+  width: 85%;
+}
+
+#enviar {
+  color: white;
+}
+
 .terminos {
   display: inline-block;
   padding: 10px;
