@@ -5,7 +5,7 @@
 1. Clonar el repo
 2. Ejectuar `npm install`
 3. Ejectuar `npm run start`
-4. Acceder desde un navegador a `localhost:4000`
+4. Acceder desde un navegador a `localhost:3000`
 
 # Autores
 
