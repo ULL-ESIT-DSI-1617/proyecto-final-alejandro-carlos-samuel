@@ -3,6 +3,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var FacebookStrategy = require('passport-facebook').Strategy;
 var TwitterStrategy = require('passport-twitter').Strategy;
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
+let GitHubStrategy = require('passport-github').Strategy;
 
 // load up the user model
 var User = require('../app/models/users_db');
@@ -220,7 +221,22 @@ module.exports = function(passport) {
             });
 
         }));
-
+        
+        // =========================================================================
+        // GITHUB   =================================================================
+        // =========================================================================
+        passport.use(new GitHubStrategy({
+            clientID: configAuth.githubAuth.clientID,
+            clientSecret: configAuth.githubAuth.clientSecret,
+            callbackURL: configAuth.githubAuth.callbackURL
+            //http://127.0.0.1:3000/auth/github/callback
+          },
+          function(accessToken, refreshToken, profile, cb) {
+            User.findOrCreate({ githubId: profile.id }, function (err, user) {
+              return cb(err, user);
+            });
+          }
+        ));
     // =========================================================================
     // TWITTER =================================================================
     // =========================================================================
@@ -380,6 +396,5 @@ module.exports = function(passport) {
 
             });
 
-        }));
-
+        }));        
 };

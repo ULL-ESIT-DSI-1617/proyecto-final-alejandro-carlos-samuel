@@ -17,6 +17,10 @@
   padding-top: 6rem;
 }
 
+
+.social-width {
+    width: 30px !important;
+
 #tarjeta_login {
   margin-top: 40px;
   height: 500px;
@@ -75,4 +79,5 @@
 
 .center-btn {
   text-align: center;
+
 }

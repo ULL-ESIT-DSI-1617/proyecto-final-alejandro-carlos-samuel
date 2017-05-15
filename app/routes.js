@@ -1,23 +1,3 @@
-/*
-let express = require('express');
-let app = express.Router();
-
-router.get('/', function(req, res) {
-    res.render('landing/landing.ejs');
-});
-
-router.get('/login', function(req, res) {
-    res.render('login/login.ejs');
-});
-
-router.get('/register', function(req, res) {
-    res.render('login/register.ejs');
-});
-
-
-module.exports = router;
-*/
-
 let express = require('express');
 let router = express.Router();
 
@@ -180,6 +160,18 @@ module.exports = function(passport) {
             failureRedirect: '/'
         }));
 
+    router.get('/auth/github',
+        passport.authenticate('github'));
+
+    router.get('/auth/github/callback',
+        //passport.authenticate
+        passport.authenticate('github', {
+            failureRedirect: '/login'
+        }),
+        function(req, res) {
+            // Successful authentication, redirect home.
+            res.redirect('/profile');
+        });
     // =============================================================================
     // UNLINK ACCOUNTS =============================================================
     // =============================================================================
