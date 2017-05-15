@@ -20,9 +20,9 @@ module.exports = {
         'callbackURL': 'http://127.0.0.1:3000/auth/google/callback'
     },
     'githubAuth': {
-    'clientID': '67ba15200f38093705ca',
-    'clientSecret': '8d428eabc634fc6c6816c7f55bd7ecc7dcfd5cf0',
-    'callbackURL': "http://127.0.0.1:3000/auth/github/callback"
-  },
+        'clientID': '67ba15200f38093705ca',
+        'clientSecret': '8d428eabc634fc6c6816c7f55bd7ecc7dcfd5cf0',
+        'callbackURL': "http://127.0.0.1:3000/auth/github/callback"
+    },
 
 };

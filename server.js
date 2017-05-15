@@ -14,10 +14,10 @@ mongoose.connect(dbConfig.url); //creamos la conexión con la base de datos
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(express.static('public'));
 
 //app.set('port', process.env.PORT || 3000);
 require('./config/passport')(passport); // pass passport for configuration
-app.use(express.static('public'));
 app.use(morgan('dev')); //ver informacion de las peticiones en la consola
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
