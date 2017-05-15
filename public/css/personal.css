@@ -28,7 +28,7 @@
 
 #tarjeta_registro {
   margin-top: 40px;
-  height: 800px;
+  height: 880px;
 }
 
 #boton_twitter_login {
@@ -45,6 +45,13 @@
   width: 100%;
 }
 
+#boton_github_login {
+  background-color: black;
+  display: inline-block;
+  margin-top: 50px;
+  width: 100%;
+}
+
 #boton_twitter_registro {
   background-color: #1dadea;
   display: inline-block;
@@ -54,6 +61,13 @@
 
 #boton_google_registro {
   background-color: #cf4332;
+  display: inline-block;
+  margin-top: 15px;
+  width: 100%;
+}
+
+#boton_github_registro {
+  background-color: black;
   display: inline-block;
   margin-top: 15px;
   width: 100%;
