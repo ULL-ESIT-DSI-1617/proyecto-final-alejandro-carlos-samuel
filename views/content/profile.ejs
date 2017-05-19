@@ -54,16 +54,24 @@
                                 <div class="input-field col s12">
                                   <% if (user.local.email) { %>
                                       <input disabled value="<%= user.local.email %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Email</label>
                                   <% } %>
-                                    <label for="disabled">Email</label>
+                                  <% if (user.twitter.token) { %>
+                                      <input disabled value="<%= user.twitter.displayName %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Nombre</label>
+                                  <% } %>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                   <% if (user.local.password) { %>
                                       <input disabled value="<%= user.local.password %>" id="disabled" type="password" class="validate">
+                                      <label for="disabled">Contraseña</label>
                                   <% } %>
-                                    <label for="disabled">Contraseña</label>
+                                  <% if (user.twitter.token) { %>
+                                    <input disabled value="<%= user.twitter.username %>" id="disabled" type="text" class="validate">
+                                    <label for="disabled">Identificador</label>
+                                  <% } %>
                                 </div>
                             </div>
                         </form>
