@@ -25,6 +25,11 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
+                <% if (message.length > 0) { %>
+                  <div class="card-panel red lighten-1">
+                    <span class="white-text center-align"><%= message %></span>
+                  </div>
+                <% } %>
                 <div class="card-panel teal grey lighten-5" id="tarjeta_login">
                     <form class="col s6" action="/login" method="post">
                         <h4>Entra con tu cuenta</h4>
@@ -48,16 +53,11 @@
                     </form>
                     <div class="col s6">
                         <h5>Accede con tus redes sociales</h5>
-                        <a id="boton_twitter_login" class="waves-effect waves-light btn"><i class="fa fa-twitter left" aria-hidden="true"></i>Entra con Twitter</a>
-                        <a id="boton_google_login" class="waves-effect waves-light btn"><i class="fa fa-google left" aria-hidden="true"></i>Entra con Google</a>
-                        <a id="boton_github_login" class="waves-effect waves-light btn"><i class="fa fa-github left" aria-hidden="true"></i>Entra con Github</a>
+                        <a id="boton_twitter_login" class="waves-effect waves-light btn" href="/auth/twitter"><i class="fa fa-twitter left" aria-hidden="true"></i>Entra con Twitter</a>
+                        <a id="boton_google_login" class="waves-effect waves-light btn" href="/auth/google"><i class="fa fa-google left" aria-hidden="true"></i>Entra con Google</a>
+                        <a id="boton_github_login" class="waves-effect waves-light btn" href="/auth/github"><i class="fa fa-github left" aria-hidden="true"></i>Entra con Github</a>
                     </div>
                 </div>
-                <% if (message.length > 0) { %>
-                  <div class="card-panel red lighten-1">
-                    <span class="white-text center-align"><%= message %></span>
-                  </div>
-                <% } %>
             </div>
         </div>
     </div>

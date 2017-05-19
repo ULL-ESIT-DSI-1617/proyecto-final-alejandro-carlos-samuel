@@ -9,8 +9,8 @@ module.exports = {
     },
 
     'twitterAuth': {
-        'consumerKey': 'vOj3NTFOcmcptpZCCaEgXJ3YK',
-        'consumerSecret': '9EYql6ndLCuClIt2ZMdgqplqWCwV2j6s1ZeCPoiIURmJwYbdBI',
+        'consumerKey': 'f7Sgyr6ZJhvaFfrRj1dqYFpNE',
+        'consumerSecret': '30zNfwnAYtGCOH6YRbF99YcCk86KndCXFqIUflTZ3opUlCGDTF',
         'callbackURL': 'http://127.0.0.1:3000/auth/twitter/callback'
     },
 
