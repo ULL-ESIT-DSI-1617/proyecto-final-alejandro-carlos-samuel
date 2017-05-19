@@ -28,7 +28,6 @@
 
 #tarjeta_registro {
   margin-top: 40px;
-  height: 880px;
 }
 
 #boton_twitter_login {
@@ -103,13 +102,7 @@
   background-color: #19d0bf;
 }
 
-#username {
-  font-family: "Roboto", sans-serif;
-  font-style: italic;
-  font-stretch: condensed;
-  font-size: 2.1rem;
-}
-
 label {
   color: #444 !important;
 }
+

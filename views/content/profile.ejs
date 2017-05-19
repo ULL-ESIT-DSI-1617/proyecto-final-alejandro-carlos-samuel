@@ -48,27 +48,46 @@
                     <div class="row">
                         <div class="col s3">
                             <img class="materialboxed" width="90%" src="images/profileimg.png">
-                            <div id="username">@<%= username %></div>
                         </div>
                         <form class="col s9">
                             <div class="row">
-                                <div class="input-field col s6">
-                                    <input disabled value="<%= name %>" id="disabled" type="text" class="validate">
-                                    <label for="disabled">Nombre</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input disabled value="<%= surname %>" id="disabled" type="text" class="validate">
-                                    <label for="disabled">Apellidos</label>
+                                <div class="input-field col s12">
+                                  <% if (user.local.email) { %>
+                                      <input disabled value="<%= user.local.email %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Email</label>
+                                  <% } %>
+                                  <% if (user.twitter.token) { %>
+                                      <input disabled value="<%= user.twitter.displayName %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Nombre</label>
+                                  <% } %>
+                                  <% if (user.google.token) { %>
+                                      <input disabled value="<%= user.google.email %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Email</label>
+                                  <% } %>
+                                  <% if (user.github.token) { %>
+                                      <input disabled value="<%= user.github.name %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Nombre</label>
+                                  <% } %>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="input-field col s6">
-                                    <input disabled value="<%= email %>" id="disabled" type="email" class="validate">
-                                    <label for="disabled">Email</label>
-                                </div>
-                                <div class="input-field col s6">
-                                    <input disabled value="<%= date %>" id="disabled" type="text" class="validate">
-                                    <label for="disabled">Fecha Nacimiento</label>
+                                <div class="input-field col s12">
+                                  <% if (user.local.password) { %>
+                                      <input disabled value="<%= user.local.password %>" id="disabled" type="password" class="validate">
+                                      <label for="disabled">Contraseña</label>
+                                  <% } %>
+                                  <% if (user.twitter.token) { %>
+                                    <input disabled value="<%= user.twitter.username %>" id="disabled" type="text" class="validate">
+                                    <label for="disabled">Identificador</label>
+                                  <% } %>
+                                  <% if (user.google.token) { %>
+                                      <input disabled value="<%= user.google.name %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Email</label>
+                                  <% } %>
+                                  <% if (user.github.token) { %>
+                                    <input disabled value="<%= user.github.displayName %>" id="disabled" type="text" class="validate">
+                                    <label for="disabled">Identificador</label>
+                                  <% } %>
                                 </div>
                             </div>
                         </form>
