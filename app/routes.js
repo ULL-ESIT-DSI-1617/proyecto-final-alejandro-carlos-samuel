@@ -5,7 +5,7 @@ module.exports = function(passport) {
 
     // normal routes ===============================================================
 
-    // show the home page (will also have our login links)
+    // LANDING =========================
     router.get('/', function(req, res) {
         res.render('landing/landing.ejs');
     });
@@ -22,6 +22,22 @@ module.exports = function(passport) {
         req.logout();
         res.redirect('/');
     });
+    
+    // BOOKS ===============================
+    router.get('/content', isLoggedIn, function(req,res) {
+      res.render('content/content.ejs', {
+        user: req.user
+      });
+    });
+    
+    // FIND ===============================
+    router.get('/find', isLoggedIn, function(req,res) {
+      res.render('content/find.ejs', {
+        user: req.user
+      });
+    });
+    
+    
 
     // =============================================================================
     // AUTHENTICATE (FIRST LOGIN) ==================================================
@@ -100,18 +116,25 @@ module.exports = function(passport) {
             successRedirect: '/profile',
             failureRedirect: '/'
         }));
-
+        
     // github ---------------------------------
-
+    
+    // send to github to do the authentication
     router.get('/auth/github', passport.authenticate('github'));
 
+    // the callback after github has authorized the user
     router.get('/auth/github/callback',
+        //passport.authenticate
         passport.authenticate('github', {
             failureRedirect: '/login'
         }),
         function(req, res) {
+            // Successful authentication, redirect home.
             res.redirect('/profile');
         });
+
+    return router;
+};
 
 // route middleware to ensure user is logged in
 function isLoggedIn(req, res, next) {
