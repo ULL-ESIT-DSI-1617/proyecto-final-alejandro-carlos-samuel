@@ -164,7 +164,8 @@ module.exports = function(passport) {
 
                 // check if the user is already logged in
                 if (!req.user) {
-
+                  console.log(user);
+                  console.log(profile);
                     User.findOne({
                         'github.id': profile.id
                     }, function(err, user) {
@@ -177,6 +178,7 @@ module.exports = function(passport) {
                                 user.github.token = token;
                                 user.github.name = profile.displayName;
                                 user.github.displayName = profile.username;
+                                user.github.image = profile.photos[0].value;
 
                                 user.save(function(err) {
                                     if (err)
@@ -195,6 +197,7 @@ module.exports = function(passport) {
                             newUser.github.token = token;
                             newUser.github.name = profile.username;
                             newUser.github.displayName = profile.displayName;
+                            newUser.github.image = profile.photos[0].value;
 
                             newUser.save(function(err) {
                                 if (err)
@@ -329,7 +332,6 @@ module.exports = function(passport) {
                     }, function(err, user) {
                         if (err)
                             return done(err);
-
                         if (user) {
 
                             // if there is a user id already but no token (user was linked at one point and then removed)
@@ -337,6 +339,7 @@ module.exports = function(passport) {
                                 user.google.token = token;
                                 user.google.name = profile.displayName;
                                 user.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
+                                user.google.image = profile.photos[0].value;
 
                                 user.save(function(err) {
                                     if (err)
@@ -354,6 +357,7 @@ module.exports = function(passport) {
                             newUser.google.token = token;
                             newUser.google.name = profile.displayName;
                             newUser.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
+                            newUser.google.image = profile.photos[0].value;
 
                             newUser.save(function(err) {
                                 if (err)
@@ -371,7 +375,7 @@ module.exports = function(passport) {
                     user.google.id = profile.id;
                     user.google.token = token;
                     user.google.name = profile.displayName;
-                    user.google.email = (profile.emails[0].value || '').toLowerCase(); // pull the first email
+                    user.google.email = (profile.photos[0].value || '').toLowerCase(); // pull the first email
 
                     user.save(function(err) {
                         if (err)

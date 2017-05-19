@@ -47,7 +47,13 @@
                 <div class="card-content">
                     <div class="row">
                         <div class="col s3">
+                          <% if (user.google.token) { %>
+                              <img class="materialboxed" width="90%" src="<%= user.google.image %>">
+                          <% } if (user.github.token) { %>
+                            <img class="materialboxed" width="90%" src="<%= user.github.image %>">
+                          <% } else { %>
                             <img class="materialboxed" width="90%" src="images/profileimg.png">
+                          <% } %>
                         </div>
                         <form class="col s9">
                             <div class="row">
