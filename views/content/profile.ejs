@@ -60,6 +60,14 @@
                                       <input disabled value="<%= user.twitter.displayName %>" id="disabled" type="text" class="validate">
                                       <label for="disabled">Nombre</label>
                                   <% } %>
+                                  <% if (user.google.token) { %>
+                                      <input disabled value="<%= user.google.email %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Email</label>
+                                  <% } %>
+                                  <% if (user.github.token) { %>
+                                      <input disabled value="<%= user.github.name %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Nombre</label>
+                                  <% } %>
                                 </div>
                             </div>
                             <div class="row">
@@ -70,6 +78,14 @@
                                   <% } %>
                                   <% if (user.twitter.token) { %>
                                     <input disabled value="<%= user.twitter.username %>" id="disabled" type="text" class="validate">
+                                    <label for="disabled">Identificador</label>
+                                  <% } %>
+                                  <% if (user.google.token) { %>
+                                      <input disabled value="<%= user.google.name %>" id="disabled" type="text" class="validate">
+                                      <label for="disabled">Email</label>
+                                  <% } %>
+                                  <% if (user.github.token) { %>
+                                    <input disabled value="<%= user.github.displayName %>" id="disabled" type="text" class="validate">
                                     <label for="disabled">Identificador</label>
                                   <% } %>
                                 </div>

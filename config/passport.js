@@ -147,12 +147,17 @@ module.exports = function(passport) {
         }));
 
     // =========================================================================
-    // FACEBOOK ================================================================
+    // GITHUB   =================================================================
     // =========================================================================
-    var fbStrategy = configAuth.facebookAuth;
-    fbStrategy.passReqToCallback = true; // allows us to pass in the req from our route (lets us check if a user is logged in or not)
-    passport.use(new FacebookStrategy(fbStrategy,
-        function(req, token, refreshToken, profile, done) {
+    passport.use(new GitHubStrategy({
+
+            clientID: configAuth.githubAuth.clientID,
+            clientSecret: configAuth.githubAuth.clientSecret,
+            callbackURL: configAuth.githubAuth.callbackURL,
+            passReqToCallback: true // allows us to pass in the req from our route (lets us check if a user is logged in or not)
+
+        },
+        function(req, token, tokenSecret, profile, done) {
 
             // asynchronous
             process.nextTick(function() {
@@ -161,18 +166,17 @@ module.exports = function(passport) {
                 if (!req.user) {
 
                     User.findOne({
-                        'facebook.id': profile.id
+                        'github.id': profile.id
                     }, function(err, user) {
                         if (err)
                             return done(err);
 
                         if (user) {
-
                             // if there is a user id already but no token (user was linked at one point and then removed)
-                            if (!user.facebook.token) {
-                                user.facebook.token = token;
-                                user.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
-                                user.facebook.email = (profile.emails[0].value || '').toLowerCase();
+                            if (!user.github.token) {
+                                user.github.token = token;
+                                user.github.name = profile.displayName;
+                                user.github.displayName = profile.username;
 
                                 user.save(function(err) {
                                     if (err)
@@ -187,10 +191,10 @@ module.exports = function(passport) {
                             // if there is no user, create them
                             var newUser = new User();
 
-                            newUser.facebook.id = profile.id;
-                            newUser.facebook.token = token;
-                            newUser.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
-                            newUser.facebook.email = (profile.emails[0].value || '').toLowerCase();
+                            newUser.github.id = profile.id;
+                            newUser.github.token = token;
+                            newUser.github.name = profile.username;
+                            newUser.github.displayName = profile.displayName;
 
                             newUser.save(function(err) {
                                 if (err)
@@ -205,10 +209,10 @@ module.exports = function(passport) {
                     // user already exists and is logged in, we have to link accounts
                     var user = req.user; // pull the user out of the session
 
-                    user.facebook.id = profile.id;
-                    user.facebook.token = token;
-                    user.facebook.name = profile.name.givenName + ' ' + profile.name.familyName;
-                    user.facebook.email = (profile.emails[0].value || '').toLowerCase();
+                    user.github.id = profile.id;
+                    user.github.token = token;
+                    user.github.name = profile.username;
+                    user.github.displayName = profile.displayName;
 
                     user.save(function(err) {
                         if (err)
@@ -216,27 +220,11 @@ module.exports = function(passport) {
 
                         return done(null, user);
                     });
-
                 }
+
             });
 
         }));
-        
-        // =========================================================================
-        // GITHUB   =================================================================
-        // =========================================================================
-        passport.use(new GitHubStrategy({
-            clientID: configAuth.githubAuth.clientID,
-            clientSecret: configAuth.githubAuth.clientSecret,
-            callbackURL: configAuth.githubAuth.callbackURL
-            //http://127.0.0.1:3000/auth/github/callback
-          },
-          function(accessToken, refreshToken, profile, cb) {
-            User.findOrCreate({ githubId: profile.id }, function (err, user) {
-              return cb(err, user);
-            });
-          }
-        ));
     // =========================================================================
     // TWITTER =================================================================
     // =========================================================================
@@ -396,5 +384,5 @@ module.exports = function(passport) {
 
             });
 
-        }));        
+        }));
 };
