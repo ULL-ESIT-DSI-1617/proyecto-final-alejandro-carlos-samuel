@@ -1,5 +1,6 @@
 let express = require('express');
 let router = express.Router();
+let createBook = require('./createbooks.js');
 
 module.exports = function(passport) {
 
@@ -31,7 +32,7 @@ module.exports = function(passport) {
     });
     
     router.post('/content', isLoggedIn, function(req,res) {
-      console.log(req.body.title);
+      createBook(req.body, req.user);
       res.render('content/content.ejs', {
         user: req.user
       });
