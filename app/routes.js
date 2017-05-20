@@ -100,20 +100,6 @@ module.exports = function(passport) {
         failureFlash: true // allow flash messages
     }));
 
-    // facebook -------------------------------
-
-    // send to facebook to do the authentication
-    router.get('/auth/facebook', passport.authenticate('facebook', {
-        scope: 'email'
-    }));
-
-    // handle the callback after facebook has authenticated the user
-    router.get('/auth/facebook/callback',
-        passport.authenticate('facebook', {
-            successRedirect: '/profile',
-            failureRedirect: '/'
-        }));
-
     // twitter --------------------------------
 
     // send to twitter to do the authentication
