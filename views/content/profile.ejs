@@ -49,11 +49,11 @@
                         <div class="col s3">
                           <% if (user.google.token) { %>
                             <img class="materialboxed" width="90%" src="<%= user.google.image %>">
-                          <% } if (user.github.token) { %>
+                          <% } else if (user.github.token) { %>
                             <img class="materialboxed" width="90%" src="<%= user.github.image %>">
-                          <% } if (user.twitter.token) { %>
+                          <% } else if (user.twitter.token) { %>
                             <img class="materialboxed" width="90%" src="<%= user.twitter.image %>">
-                          <% } if (user.local.email) { %>
+                          <% } else if (user.local.email) { %>
                             <img class="materialboxed" width="90%" src="images/profileimg.png">
                           <% } %>
                         </div>
@@ -63,16 +63,13 @@
                                   <% if (user.local.email) { %>
                                       <input disabled value="<%= user.local.email %>" id="disabled" type="text" class="validate">
                                       <label for="disabled">Email</label>
-                                  <% } %>
-                                  <% if (user.twitter.token) { %>
+                                  <% } else if (user.twitter.token) { %>
                                       <input disabled value="<%= user.twitter.displayName %>" id="disabled" type="text" class="validate">
                                       <label for="disabled">Nombre</label>
-                                  <% } %>
-                                  <% if (user.google.token) { %>
+                                  <% } else if (user.google.token) { %>
                                       <input disabled value="<%= user.google.email %>" id="disabled" type="text" class="validate">
                                       <label for="disabled">Email</label>
-                                  <% } %>
-                                  <% if (user.github.token) { %>
+                                  <% } else if (user.github.token) { %>
                                       <input disabled value="<%= user.github.name %>" id="disabled" type="text" class="validate">
                                       <label for="disabled">Nombre</label>
                                   <% } %>
@@ -83,16 +80,13 @@
                                   <% if (user.local.password) { %>
                                       <input disabled value="<%= user.local.password %>" id="disabled" type="password" class="validate">
                                       <label for="disabled">Contraseña</label>
-                                  <% } %>
-                                  <% if (user.twitter.token) { %>
-                                    <input disabled value="<%= user.twitter.username %>" id="disabled" type="text" class="validate">
+                                  <% } else if (user.twitter.token) { %>
+                                    <input disabled value="@<%= user.twitter.username %>" id="disabled" type="text" class="validate">
                                     <label for="disabled">Identificador</label>
-                                  <% } %>
-                                  <% if (user.google.token) { %>
+                                  <% } else if (user.google.token) { %>
                                       <input disabled value="<%= user.google.name %>" id="disabled" type="text" class="validate">
                                       <label for="disabled">Email</label>
-                                  <% } %>
-                                  <% if (user.github.token) { %>
+                                  <% } else if (user.github.token) { %>
                                     <input disabled value="<%= user.github.displayName %>" id="disabled" type="text" class="validate">
                                     <label for="disabled">Identificador</label>
                                   <% } %>

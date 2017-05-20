@@ -50,50 +50,50 @@
         <div class="modal-content">
             <h4>Añadir nuevo libro</h4>
             <div class="row">
-                <form class="col s12" action="/content" method="get">
+                <form class="col s12" action="/content" method="post">
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="title" type="text" class="validate">
+                            <input id="title" type="text" class="validate" name="title">
                             <label for="title">Título</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="author" type="text" class="validate">
+                            <input id="author" type="text" class="validate" name="author">
                             <label for="author">Autor</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="isbn" type="text" class="validate">
+                            <input id="isbn" type="text" class="validate" name="isbn">
                             <label for="isbn">ISBN</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s4">
-                            <input id="publisher" type="text" class="validate">
+                            <input id="publisher" type="text" class="validate" name="publisher">
                             <label for="publisher">Editorial</label>
                         </div>
                         <div class="input-field col s4">
-                            <input id="genre" type="text" class="validate">
+                            <input id="genre" type="text" class="validate" name="genre">
                             <label for="genre">Género</label>
                         </div>
                         <div class="input-field col s4">
-                            <input id="pages" type="text" class="validate">
+                            <input id="pages" type="text" class="validate" name="pages">
                             <label for="pages">Num. Paginas</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="price" type="text" class="validate">
+                            <input id="price" type="text" class="validate" name="price">
                             <label for="price">Precio</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="genre" type="date" class="datepicker">
-                            <label for="genre">Fecha Compra</label>
+                            <input id="buydate" type="date" class="datepicker" name="buydate">
+                            <label for="buydate">Fecha Compra</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col s10 offset-s1 center-align">
-                            <button class="btn waves-effect waves-light" type="submit">Añadir</button>
+                            <button class="btn waves-effect waves-light" type="submit">Añadir<i class="material-icons right" id="enviar">add</i></button>
                         </div>
                     </div>
                 </form>
