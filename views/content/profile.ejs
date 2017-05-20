@@ -48,10 +48,12 @@
                     <div class="row">
                         <div class="col s3">
                           <% if (user.google.token) { %>
-                              <img class="materialboxed" width="90%" src="<%= user.google.image %>">
+                            <img class="materialboxed" width="90%" src="<%= user.google.image %>">
                           <% } if (user.github.token) { %>
                             <img class="materialboxed" width="90%" src="<%= user.github.image %>">
-                          <% } else { %>
+                          <% } if (user.twitter.token) { %>
+                            <img class="materialboxed" width="90%" src="<%= user.twitter.image %>">
+                          <% } if (user.local.email) { %>
                             <img class="materialboxed" width="90%" src="images/profileimg.png">
                           <% } %>
                         </div>

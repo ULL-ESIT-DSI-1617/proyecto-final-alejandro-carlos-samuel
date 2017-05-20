@@ -30,6 +30,13 @@ module.exports = function(passport) {
       });
     });
     
+    router.post('/content', isLoggedIn, function(req,res) {
+      console.log(req.body.title);
+      res.render('content/content.ejs', {
+        user: req.user
+      });
+    });
+    
     // FIND ===============================
     router.get('/find', isLoggedIn, function(req,res) {
       res.render('content/find.ejs', {

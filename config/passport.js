@@ -164,8 +164,6 @@ module.exports = function(passport) {
 
                 // check if the user is already logged in
                 if (!req.user) {
-                  console.log(user);
-                  console.log(profile);
                     User.findOne({
                         'github.id': profile.id
                     }, function(err, user) {
@@ -259,6 +257,7 @@ module.exports = function(passport) {
                                 user.twitter.token = token;
                                 user.twitter.username = profile.username;
                                 user.twitter.displayName = profile.displayName;
+                                user.twitter.image = profile.photos[0].value;
 
                                 user.save(function(err) {
                                     if (err)
@@ -277,6 +276,7 @@ module.exports = function(passport) {
                             newUser.twitter.token = token;
                             newUser.twitter.username = profile.username;
                             newUser.twitter.displayName = profile.displayName;
+                            newUser.twitter.image = profile.photos[0].value;
 
                             newUser.save(function(err) {
                                 if (err)

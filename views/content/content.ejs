@@ -35,13 +35,72 @@
             </div>
         </nav>
     </div>
-    
+
     <div class="container">
-      <p>Work in progress</p>
+        <p>Work in progress</p>
     </div>
-    
-    <a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-    
+
+    <!-- Modal Trigger -->
+    <div class="fixed-action-btn">
+        <a href="#modal1" class="btn-floating btn-large waves-effect waves-light red" tabindex="7"><i class="material-icons">mode_edit</i></a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Añadir nuevo libro</h4>
+            <div class="row">
+                <form class="col s12" action="/content" method="get">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="title" type="text" class="validate">
+                            <label for="title">Título</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="author" type="text" class="validate">
+                            <label for="author">Autor</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="isbn" type="text" class="validate">
+                            <label for="isbn">ISBN</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="publisher" type="text" class="validate">
+                            <label for="publisher">Editorial</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="genre" type="text" class="validate">
+                            <label for="genre">Género</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="pages" type="text" class="validate">
+                            <label for="pages">Num. Paginas</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="price" type="text" class="validate">
+                            <label for="price">Precio</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="genre" type="date" class="datepicker">
+                            <label for="genre">Fecha Compra</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s10 offset-s1 center-align">
+                            <button class="btn waves-effect waves-light" type="submit">Añadir</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <!--  Scripts-->
     <script src="https://use.fontawesome.com/f31f9c5054.js"></script>
