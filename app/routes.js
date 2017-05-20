@@ -44,17 +44,9 @@ module.exports = function(passport) {
     });
 
     router.post('/content', isLoggedIn, function(req, res) {
-        //;
-        //res.redirect('/content');
-        createBook(req.body, req.user)
-            .then((response) => {
-                console.log(response);
-                res.redirect('/content');
-            })
-            .catch((response) => {
-                console.log("Error al añadir libros");
-            });
-    });
+    createBook(req.body, req.user);
+    res.redirect(req.get('referer'));
+  });
 
     // FIND ===============================
     router.get('/find', isLoggedIn, function(req, res) {
