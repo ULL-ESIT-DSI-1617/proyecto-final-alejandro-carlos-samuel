@@ -2,153 +2,153 @@
 <html lang="es">
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-  <title>MyLIB - Mis Libros</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+    <title>MyLIB - Mis Libros</title>
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
-  <link href="css/personal.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="css/personal.css" type="text/css" rel="stylesheet" media="screen,projection" />
 </head>
 
 <body>
-  <div class="navbar-fixed">
-    <nav class="white" role="navigation">
-      <div class="nav-wrapper container">
-        <a id="logo-container" href="/content" class="brand-logo">MyLIB</a>
-        <ul class="right hide-on-med-and-down">
-          <li class="active"><a href="/content"><i class="material-icons right">book</i>Mis libros</a></li>
-          <li><a href="/find"><i class="material-icons right">search</i>Buscar</a></li>
-          <li><a href="/profile"><i class="material-icons right">account_circle</i>Mi Perfil</a></li>
-          <li><a class="waves-effect waves-light btn" href="/logout">Cerrar Sesión <i class="material-icons right" id="exit">exit_to_app</i></a></li>
-        </ul>
+    <div class="navbar-fixed">
+        <nav class="white" role="navigation">
+            <div class="nav-wrapper container">
+                <a id="logo-container" href="/content" class="brand-logo">MyLIB</a>
+                <ul class="right hide-on-med-and-down">
+                    <li class="active"><a href="/content"><i class="material-icons right">book</i>Mis libros</a></li>
+                    <li><a href="/find"><i class="material-icons right">search</i>Buscar</a></li>
+                    <li><a href="/profile"><i class="material-icons right">account_circle</i>Mi Perfil</a></li>
+                    <li><a class="waves-effect waves-light btn" href="/logout">Cerrar Sesión <i class="material-icons right" id="exit">exit_to_app</i></a></li>
+                </ul>
 
-        <ul id="nav-mobile" class="side-nav">
-          <li><a href="/content"><i class="material-icons left">book</i>Mis libros</a></li>
-          <li><a href="/find"><i class="material-icons left">search</i>Buscar</a></li>
-          <li><a href="/profile"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
-          <li><a href="/logout"><i class="material-icons left">exit_to_app</i>Cerrar Sesión</a></li>
-        </ul>
-        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-      </div>
-    </nav>
-  </div>
-
-  <div class="container">
-    <div class="row">
-      <div class="col s8 offset-s2">
-        <h1 class="center-align">Mis Libros</h1>
-      </div>
+                <ul id="nav-mobile" class="side-nav">
+                    <li><a href="/content"><i class="material-icons left">book</i>Mis libros</a></li>
+                    <li><a href="/find"><i class="material-icons left">search</i>Buscar</a></li>
+                    <li><a href="/profile"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
+                    <li><a href="/logout"><i class="material-icons left">exit_to_app</i>Cerrar Sesión</a></li>
+                </ul>
+                <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
     </div>
-    <% if(book.length == 0) { %>
-      <div id="book-content">
-        <% } %>
-          <div class="row">
-            <% for(var i=0; i<book.length; i++) { %>
-              <div class="col s6">
-                <div class="card horizontal">
-                  <div class="card-image">
-                    <% if(book[i].img) { %>
-                      <img src="<%= book[i].img %>">
-                      <% } else { %>
-                        <img src="images/book-cover.jpg">
+
+    <div class="container">
+        <div class="row">
+            <div class="col s8 offset-s2">
+                <h1 class="center-align">Mis Libros</h1>
+            </div>
+        </div>
+        <% if (book.length == 0) { %>
+            <div id="book-content"></div>
+            <% } %>
+                <div class="row">
+                    <% for(var i=0; i<book.length; i++) { %>
+                        <div class="col s6">
+                            <div class="card horizontal">
+                                <div class="card-image">
+                                    <% if(book[i].img) { %>
+                                        <img src="<%= book[i].img %>">
+                                        <% } else { %>
+                                            <img src="images/book-cover.jpg">
+                                            <% } %>
+                                </div>
+                                <div class="card-stacked">
+                                    <div class="card-content">
+                                        <span class="card-title"><%= book[i].title %></span>
+                                        <p>
+                                            <%= book[i].author %>
+                                        </p>
+                                        <p>
+                                            <%= book[i].publisher %>
+                                        </p>
+                                        <a href="/content/<%= book[i]._id %>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <% } %>
-                  </div>
-                  <div class="card-stacked">
-                    <div class="card-content">
-                      <span class="card-title"><%= book[i].title %></span>
-                      <p>Autor:
-                        <%= book[i].author %>
-                      </p>
-                      <p>Editorial:
-                        <%= book[i].publisher %>
-                      </p>
-                      <a href="/content/<%= book[i]._id %>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              <% } %>
-          </div>
-      </div>
+    </div>
 
-      <!-- Element Showed & Modal Trigger -->
-      <div class="fixed-action-btn">
+    <!-- Element Showed & Modal Trigger -->
+    <div class="fixed-action-btn">
         <a href="#modal1" id="menu" class="waves-effect waves-light btn btn-floating btn-large"><i class="material-icons">add</i></a>
-      </div>
+    </div>
 
-      <!-- Tap Target Structure -->
-      <div class="tap-target" data-activates="menu">
+    <!-- Tap Target Structure -->
+    <div class="tap-target" data-activates="menu">
         <div class="tap-target-content white-text">
-          <h5>Añade tu primer libro</h5>
-          <p>Upsss! Parece que no tienes ningún libro todavía. Haz click en el + para añadir tu primer libro.</p>
+            <h5>Añade tu primer libro</h5>
+            <p>Upsss! Parece que no tienes ningún libro todavía. Haz click en el + para añadir tu primer libro.</p>
         </div>
-      </div>
+    </div>
 
-      <!-- Modal Structure -->
-      <div id="modal1" class="modal modal-fixed-footer">
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
         <div class="modal-content">
-          <h4>Añadir nuevo libro</h4>
-          <div class="row">
-            <form class="col s12" action="/content" method="post">
-              <div class="row">
-                <div class="input-field col s12">
-                  <input id="title" type="text" class="validate" name="title">
-                  <label for="title">Título</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s6">
-                  <input id="author" type="text" class="validate" name="author">
-                  <label for="author">Autor</label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="isbn" type="text" class="validate" name="isbn">
-                  <label for="isbn">ISBN</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s4">
-                  <input id="publisher" type="text" class="validate" name="publisher">
-                  <label for="publisher">Editorial</label>
-                </div>
-                <div class="input-field col s4">
-                  <input id="genre" type="text" class="validate" name="genre">
-                  <label for="genre">Género</label>
-                </div>
-                <div class="input-field col s4">
-                  <input id="pages" type="text" class="validate" name="pages">
-                  <label for="pages">Num. Paginas</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="input-field col s6">
-                  <input id="price" type="text" class="validate" name="price">
-                  <label for="price">Precio</label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="buydate" type="date" class="datepicker" name="buydate">
-                  <label for="buydate">Fecha Compra</label>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s10 offset-s1 center-align">
-                  <button class="btn waves-effect waves-light" type="submit">Añadir<i class="material-icons right" id="enviar">add</i></button>
-                </div>
-              </div>
-            </form>
-          </div>
+            <h4>Añadir nuevo libro</h4>
+            <div class="row">
+                <form class="col s12" action="/content" method="post">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="title" type="text" class="validate" name="title">
+                            <label for="title">Título</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="author" type="text" class="validate" name="author">
+                            <label for="author">Autor</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="isbn" type="text" class="validate" name="isbn">
+                            <label for="isbn">ISBN</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="publisher" type="text" class="validate" name="publisher">
+                            <label for="publisher">Editorial</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="genre" type="text" class="validate" name="genre">
+                            <label for="genre">Género</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="pages" type="text" class="validate" name="pages">
+                            <label for="pages">Num. Paginas</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="price" type="text" class="validate" name="price">
+                            <label for="price">Precio</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="buydate" type="date" class="datepicker" name="buydate">
+                            <label for="buydate">Fecha Compra</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s10 offset-s1 center-align">
+                            <button class="btn waves-effect waves-light" type="submit">Añadir<i class="material-icons right" id="enviar">add</i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
-      </div>
+    </div>
 
 
-      <!--  Scripts-->
-      <script src="https://use.fontawesome.com/f31f9c5054.js"></script>
-      <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script src="js/materialize.js"></script>
-      <script src="js/init.js"></script>
+    <!--  Scripts-->
+    <script src="https://use.fontawesome.com/f31f9c5054.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 
 </body>
 
