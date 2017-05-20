@@ -104,6 +104,10 @@
   background-color: #19d0bf;
 }
 
+.tap-target {
+  background-color: #19d0bf !important;
+}
+
 label {
   color: #444 !important;
 }

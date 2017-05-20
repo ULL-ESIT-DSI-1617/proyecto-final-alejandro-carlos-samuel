@@ -37,12 +37,20 @@
     </div>
 
     <div class="container">
-        <p>Work in progress</p>
+        <div id="book-content"></div>
     </div>
 
-    <!-- Modal Trigger -->
+    <!-- Element Showed & Modal Trigger -->
     <div class="fixed-action-btn">
-        <a href="#modal1" class="btn-floating btn-large waves-effect waves-light red" tabindex="7"><i class="material-icons">mode_edit</i></a>
+        <a href="#modal1" id="menu" class="waves-effect waves-light btn btn-floating"><i class="material-icons">add</i></a>
+    </div>
+
+    <!-- Tap Target Structure -->
+    <div class="tap-target" data-activates="menu">
+        <div class="tap-target-content white-text">
+            <h5>Añade tu primer libro</h5>
+            <p>Upsss! Parece que no tienes ningún libro todavía. Haz click en el + para añadir tu primer libro.</p>
+        </div>
     </div>
 
     <!-- Modal Structure -->
