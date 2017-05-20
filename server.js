@@ -22,14 +22,14 @@ app.use(morgan('dev')); //ver informacion de las peticiones en la consola
 app.use(cookieParser()); // read cookies (needed for auth)
 app.use(bodyParser.json()); // get information from html forms
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }));
 
 // required for passport
 app.use(session({
-    secret: 'supersecret', // session secret
-    resave: true,
-    saveUninitialized: true
+  secret: 'supersecret', // session secret
+  resave: true,
+  saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
@@ -40,5 +40,5 @@ app.use('/', routes);
 
 let port = process.env.PORT || 3000;
 var server = app.listen(port, function() {
-    console.log('MyLIB ejecutandose en localhost:%s', port);
+  console.log('MyLIB ejecutandose en localhost:%s', port);
 });

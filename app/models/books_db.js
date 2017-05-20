@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 // define the schema for our user model
 var bookSchema = mongoose.Schema({
-  
+
   title: String,
   author: String,
   publisher: String,
@@ -10,10 +10,20 @@ var bookSchema = mongoose.Schema({
   price: Number,
   genre: String,
   pages: Number,
-  buyDate: { type: Date, default: Date.now },
-  loan: { state: Boolean, loanDate: Date, borrower: String },
+  buyDate: {
+    type: Date,
+    default: Date.now
+  },
+  loan: {
+    state: Boolean,
+    loanDate: Date,
+    borrower: String
+  },
   read: Boolean,
-  owner:[ {type: mongoose.Schema.Types.ObjectId, ref: 'User'} ]
+  owner: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User'
+  }]
 });
 
 // create the model for users and expose it to our app
