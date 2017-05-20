@@ -14,6 +14,12 @@
             startingTop: '20%', // Starting top style attribute
             endingTop: '10%', // Ending top style attribute
         });
+        (function() {
+          if ($('#book-content').is(':empty')) {
+            $('.tap-target').tapTarget('open');
+          }
+          setTimeout(arguments.callee, 5000);
+        })();
 
     }); // end of document ready
 })(jQuery); // end of jQuery name space
