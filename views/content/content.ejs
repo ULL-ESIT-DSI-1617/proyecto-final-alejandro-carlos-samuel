@@ -4,7 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
-    <title>MyLIB - Login</title>
+    <title>MyLIB - Mis Libros</title>
 
     <!-- CSS  -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -26,7 +26,7 @@
                 </ul>
 
                 <ul id="nav-mobile" class="side-nav">
-                    <li><a href="/find"><i class="material-icons right">book</i>Mis libros</a></li>
+                    <li><a href="/content"><i class="material-icons left">book</i>Mis libros</a></li>
                     <li><a href="/find"><i class="material-icons left">search</i>Buscar</a></li>
                     <li><a href="/profile"><i class="material-icons left">account_circle</i>Mi Perfil</a></li>
                     <li><a href="/logout"><i class="material-icons left">exit_to_app</i>Cerrar Sesión</a></li>
@@ -35,8 +35,72 @@
             </div>
         </nav>
     </div>
-    
-    <p>Work in progress</p>
+
+    <div class="container">
+        <p>Work in progress</p>
+    </div>
+
+    <!-- Modal Trigger -->
+    <div class="fixed-action-btn">
+        <a href="#modal1" class="btn-floating btn-large waves-effect waves-light red" tabindex="7"><i class="material-icons">mode_edit</i></a>
+    </div>
+
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+        <div class="modal-content">
+            <h4>Añadir nuevo libro</h4>
+            <div class="row">
+                <form class="col s12" action="/content" method="get">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="title" type="text" class="validate">
+                            <label for="title">Título</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="author" type="text" class="validate">
+                            <label for="author">Autor</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="isbn" type="text" class="validate">
+                            <label for="isbn">ISBN</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s4">
+                            <input id="publisher" type="text" class="validate">
+                            <label for="publisher">Editorial</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="genre" type="text" class="validate">
+                            <label for="genre">Género</label>
+                        </div>
+                        <div class="input-field col s4">
+                            <input id="pages" type="text" class="validate">
+                            <label for="pages">Num. Paginas</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="price" type="text" class="validate">
+                            <label for="price">Precio</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input id="genre" type="date" class="datepicker">
+                            <label for="genre">Fecha Compra</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s10 offset-s1 center-align">
+                            <button class="btn waves-effect waves-light" type="submit">Añadir</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
 
     <!--  Scripts-->
     <script src="https://use.fontawesome.com/f31f9c5054.js"></script>

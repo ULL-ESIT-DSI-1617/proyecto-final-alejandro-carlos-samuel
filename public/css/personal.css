@@ -1,3 +1,5 @@
+.navbar-fixed { z-index: 9999; }
+
 .card-avatar img {
     height: 150px;
     width: 150px;
