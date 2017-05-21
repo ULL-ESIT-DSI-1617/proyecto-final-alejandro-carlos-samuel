@@ -15,10 +15,6 @@
   color: #19d0bf;
 }
 
-nav .input-field label i{
-  color: #19d0bf;
-}
-
 #servicio, #equipo {
   padding-top: 6rem;
 }
@@ -127,7 +123,7 @@ label {
 .book-value {
   font-style: italic;
   font-weight: bold;
-  font-size: xx-large;
+  font-size: x-large;
 }
 
 #search {
@@ -135,3 +131,15 @@ label {
   background-color: white;
 }
 
+#searchInfo {
+  background-color: #19d0bf !important;
+  font-size: large;
+}
+
+nav .input-field label i{
+  color: #19d0bf;
+}
+
+nav .input-field label.active i {
+  color: #19d0bf;
+}
