@@ -3,20 +3,20 @@ var mongoose = require('mongoose');
 var Book = require('../app/models/books_db');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-function findBooks(info2Find) {
+function findBooks(info2Find, user) {
     const queryResult = new Promise(function(resolve, reject) {
         Book.find({
             $or: [{
-                    author: info2Find
+                    author: info2Find, owner: user._id.toString()
                 },
                 {
-                    title: info2Find
+                    title: info2Find, owner: user._id.toString()
                 },
                 {
-                    isbn: info2Find
+                    isbn: info2Find, owner: user._id.toString()
                 },
                 {
-                    publisher: info2Find
+                    publisher: info2Find, owner: user._id.toString()
                 }
             ]
         }, (err, book) => {

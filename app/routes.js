@@ -66,7 +66,7 @@ module.exports = function(passport) {
 
     // FIND ===============================
     router.get('/find', isLoggedIn, function(req, res) {
-      findBook(req.query.find)
+      findBook(req.query.find, req.user)
           .then((response) => {
               //console.log(response);
               res.render('content/find.ejs', {
