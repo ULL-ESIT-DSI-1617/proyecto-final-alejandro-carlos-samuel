@@ -43,7 +43,7 @@
                     <div class="nav-wrapper">
                         <form action="/find" method="get">
                             <div class="input-field" id="search">
-                                <input type="search" required name="find" placeholder="Buscar por título, autor, isbn o editorial">
+                                <input type="search" required name="find" placeholder="Buscar por título, autor, isbn o editorial ...">
                                 <label class="label-icon" for="search"><i id="lupa" class="material-icons">search</i></label>
                                 <i class="material-icons">close</i>
                             </div>
@@ -74,7 +74,7 @@
                                                 <p>
                                                     <%= book[i].publisher %>
                                                 </p>
-                                                <a href="/content/<%= book[i]._id %>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                                                <a href="/content/<%= book[i]._id %>" class="btn-floating halfway-fab waves-effect waves-light orange accent-2"><i class="material-icons">add</i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -82,16 +82,18 @@
                                 <% } %>
                         </div>
                         <div class="card-panel green lighten-1 center-align" id="searchInfo">
-                            <span class="white-text">Se ha<% if (matches > 1) { %><span>n</span><% } %> encontrado <%= matches %> resultado<% if (matches > 1) { %><span>s</span><% } %> que coindicen con su búsqueda.</span>
+                            <span class="white-text">Se ha<% if (matches != 1) { %><span>n</span><% } %> encontrado <%= matches %> resultado<% if (matches != 1) { %><span>s</span><% } %> que coindicen con su búsqueda.</span>
                         </div>
             </div>
         </div>
+    </div>
+    
 
-        <!--  Scripts-->
-        <script src="https://use.fontawesome.com/f31f9c5054.js"></script>
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="js/materialize.js"></script>
-        <script src="js/init.js"></script>
+    <!--  Scripts-->
+    <script src="https://use.fontawesome.com/f31f9c5054.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 
 </body>
 
