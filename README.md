@@ -1,11 +1,22 @@
 # MYLIB
 
+Tu biblioteca en la nube. Organiza tus libros favoritos de la manera más sencilla.
+
+# Requisitos
+
+Para el correcto funcionamiento de la aplicación es necesario disponer de MongoDB.
+
+#### ¿Cómo instalarlo?
+
+[Tutorial instalación MongoDB.](https://docs.mongodb.com/manual/installation/#tutorials)
+
 # Uso
 
-1. Clonar el repo
-2. Ejectuar `npm install`
-3. Ejectuar `npm run start`
-4. Acceder desde un navegador a `localhost:3000`
+1. Iniciar en una terminal `$ mongod`.
+2. Clonar el repo
+3. Ejecutar `$ npm install`
+4. Ejecutar `$ npm start`
+5. Acceder desde un navegador a `localhost:3000`
 
 # Autores
 
@@ -13,23 +24,42 @@
 * [Carlos de Armas](http://alu0100816167.github.io)
 * [Samuel Valcárcel](http://cosaca.github.io)
 
+# Estructura
+
 ```
 .
 ├── LICENSE
 ├── README.md
 ├── app
+│   ├── createbooks.js
+│   ├── deletebooks.js
+│   ├── findbooks.js
+│   ├── getbooks.js
 │   ├── models
-│   │   └── users_db.js -> definición de la base de datos
-│   └── routes.js -> rutas de la aplicación
+│   │   ├── books_db.js
+│   │   └── users_db.js
+│   └── routes.js
 ├── config
-│   ├── auth.js -> se almacenan los tokens de acceso (facebook, twitter, etc.)
-│   └── passport.js -> configuración de passport
+│   ├── auth.js
+│   ├── db.js
+│   └── passport.js
 ├── package.json
-├── server.js -> servidor express
-└── views -> vistas
+├── server.js
+└── views
+    ├── content
+    │   ├── bookinfo.ejs
+    │   ├── content.ejs
+    │   ├── find.ejs
+    │   └── profile.ejs
     ├── landing
     │   └── landing.ejs
-    └── login
+    ├── login
+    │   ├── login.ejs
+    │   └── register.ejs
+    └── prueba
+        ├── connect-local.ejs
+        ├── index.ejs
         ├── login.ejs
-        └── register.ejs
+        ├── profile.ejs
+        └── signup.ejs
 ```
