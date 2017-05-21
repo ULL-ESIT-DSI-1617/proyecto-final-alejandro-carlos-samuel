@@ -9,7 +9,7 @@ let GitHubStrategy = require('passport-github').Strategy;
 var User = require('../app/models/users_db');
 
 // load the auth variables
-var configAuth = require('./auth'); // use this one for testing
+var configAuth = require('./auth.js'); // use this one for testing
 
 module.exports = function(passport) {
 
