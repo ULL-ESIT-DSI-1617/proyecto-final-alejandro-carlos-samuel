@@ -1,12 +1,19 @@
 var Book = require('../app/models/books_db');
 
-function deleteBook(book, user) {
-  Book.findOneAndRemove({owner: user._id.toString(), title: book.title}, (err) => {
-    if (err)
-      console.log(err);
-  });  
-}
+function deleteBook(book) {
+  const queryResult = new Promise((resolve, reject) => {
+    Book.findOneAndRemove({
+      _id: book
+    }, (err) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(true);
+    });
+  });
 
+  return queryResult;
+}
 module.exports = deleteBook;
 
 

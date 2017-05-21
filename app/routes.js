@@ -4,6 +4,7 @@ let createBook = require('./createbooks.js');
 let getBooks = require('./getbooks.js');
 let getUserBooks = getBooks.getUserBooks;
 let getBookInfo = getBooks.getBookInfo;
+let deleteBook = require('./deletebooks.js');
 
 
 module.exports = function(passport) {
@@ -29,7 +30,7 @@ module.exports = function(passport) {
     });
 
     // BOOKS ===============================
-    router.get('/content/', isLoggedIn, function(req, res) {
+    router.get('/content', isLoggedIn, function(req, res) {
         //let myBooks = getBooks(req.user);
         //console.log(myBooks);
         getUserBooks(req.user)
@@ -74,6 +75,18 @@ module.exports = function(passport) {
     });
 
     //DELETE =============
+    
+    router.get('/delete/:id', isLoggedIn, function(req, res) {
+        deleteBook(req.params.id)
+            .then((response) => {
+                console.log("Libro eliminado correctamente.");
+                res.redirect('/content');
+            })
+            .catch((response) => {
+                console.log("Error al mostrar libros");
+            });
+
+    });
     /*
     router.get('/delete/:title', isLoggedIn, function(req, res) {
       deleteBook(req.params.title);
