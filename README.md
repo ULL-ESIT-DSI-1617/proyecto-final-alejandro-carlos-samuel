@@ -40,8 +40,6 @@ Para el correcto funcionamiento de la aplicación es necesario disponer de Mongo
 │   │   └── users_db.js
 │   └── routes.js
 ├── config
-│   ├── auth.js
-│   ├── db.js
 │   └── passport.js
 ├── package.json
 ├── server.js
