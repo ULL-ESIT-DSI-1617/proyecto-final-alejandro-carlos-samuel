@@ -112,3 +112,17 @@ label {
   color: #444 !important;
 }
 
+.book-atribute {
+  font-stretch: condensed;
+  font-weight: lighter;
+  font-size: large;
+  padding-left: 25px;
+  margin-bottom: -10px;
+}
+
+.book-value {
+  font-style: italic;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
