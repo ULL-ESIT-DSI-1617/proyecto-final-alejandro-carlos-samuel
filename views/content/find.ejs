@@ -56,31 +56,42 @@
       <div id="book-content"></div>
       <% } %>
         <div class="row">
-          <% for(var i=0; i<book.length; i++) { %>
-            <div class="col s6">
-              <div class="card horizontal">
-                <div class="card-image">
-                  <% if(book[i].img) { %>
-                    <img src="<%= book[i].img %>">
-                    <% } else { %>
-                      <img src="images/book-cover.jpg">
-                      <% } %>
-                </div>
-                <div class="card-stacked">
-                  <div class="card-content">
-                    <span class="card-title"><%= book[i].title %></span>
-                    <p>
-                      <%= book[i].author %>
-                    </p>
-                    <p>
-                      <%= book[i].publisher %>
-                    </p>
-                    <a href="/content/<%= book[i]._id %>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                  </div>
-                </div>
+          <% if (matches >= 1) { %>
+            <% if(matches == 1){ %>
+              <div class="card-panel green lighten-1">
+                <span class="white-text center-align">Se ha encontrado <%= matches %> resultado.</span>
               </div>
-            </div>
-            <% } %>
+              <% } else{ %>
+                <div class="card-panel green lighten-1">
+                  <span class="white-text center-align">Se han encontrado <%= matches %> resultados.</span>
+                </div>
+                <% } %>
+                  <% } %>
+                    <% for(var i=0; i<book.length; i++) { %>
+                      <div class="col s6">
+                        <div class="card horizontal">
+                          <div class="card-image">
+                            <% if(book[i].img) { %>
+                              <img src="<%= book[i].img %>">
+                              <% } else { %>
+                                <img src="images/book-cover.jpg">
+                                <% } %>
+                          </div>
+                          <div class="card-stacked">
+                            <div class="card-content">
+                              <span class="card-title"><%= book[i].title %></span>
+                              <p>
+                                <%= book[i].author %>
+                              </p>
+                              <p>
+                                <%= book[i].publisher %>
+                              </p>
+                              <a href="/content/<%= book[i]._id %>" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <% } %>
         </div>
 
         <!--  Scripts-->

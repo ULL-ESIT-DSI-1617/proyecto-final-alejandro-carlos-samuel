@@ -68,10 +68,12 @@ module.exports = function(passport) {
     router.get('/find', isLoggedIn, function(req, res) {
       findBook(req.query.find, req.user)
           .then((response) => {
-              //console.log(response);
+            //console.log("TAMAÑO BUSQUEDA");
+              //console.log(response.length);
               res.render('content/find.ejs', {
                   user: req.user,
-                  book: response
+                  book: response,
+                  matches: response.length
               });
           })
           .catch((response) => {
