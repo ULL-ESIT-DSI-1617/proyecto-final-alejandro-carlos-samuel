@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var Book = require('../app/models/books_db');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-function getBooks(user) {
+function getUserBooks(user) {
   const queryResult = new Promise(function(resolve, reject) {
     Book.find({
       owner: user._id.toString()
@@ -11,7 +11,6 @@ function getBooks(user) {
       if (err) {
         reject(err);
       }
-
       resolve(book);
     });
   });
@@ -19,4 +18,22 @@ function getBooks(user) {
   return queryResult;
 }
 
-module.exports = getBooks;
+function getBookInfo(book) {
+  const queryResult = new Promise(function(resolve, reject) {
+    Book.find({
+      _id: book
+    }, (err, bookSearch) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(bookSearch);
+    });
+  });
+
+  return queryResult;
+}
+
+module.exports = {
+  getUserBooks,
+  getBookInfo
+};
