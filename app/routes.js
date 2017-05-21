@@ -42,7 +42,6 @@ module.exports = function(passport) {
             .catch((response) => {
                 console.log("Error al buscar libros");
             });
-
     });
 
     router.get('/content/:id', isLoggedIn, function(req, res) {
@@ -116,7 +115,7 @@ module.exports = function(passport) {
 
     // process the login form
     router.post('/login', passport.authenticate('local-login', {
-        successRedirect: '/profile', // redirect to the secure profile section
+        successRedirect: '/content', // redirect to the secure profile section
         failureRedirect: '/login', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
@@ -131,7 +130,7 @@ module.exports = function(passport) {
 
     // process the signup form
     router.post('/register', passport.authenticate('local-signup', {
-        successRedirect: '/profile', // redirect to the secure profile section
+        successRedirect: '/content', // redirect to the secure profile section
         failureRedirect: '/register', // redirect back to the signup page if there is an error
         failureFlash: true // allow flash messages
     }));
@@ -146,7 +145,7 @@ module.exports = function(passport) {
     // handle the callback after twitter has authenticated the user
     router.get('/auth/twitter/callback',
         passport.authenticate('twitter', {
-            successRedirect: '/profile',
+            successRedirect: '/content',
             failureRedirect: '/'
         }));
 
@@ -161,7 +160,7 @@ module.exports = function(passport) {
     // the callback after google has authenticated the user
     router.get('/auth/google/callback',
         passport.authenticate('google', {
-            successRedirect: '/profile',
+            successRedirect: '/content',
             failureRedirect: '/'
         }));
 
@@ -178,7 +177,7 @@ module.exports = function(passport) {
         }),
         function(req, res) {
             // Successful authentication, redirect home.
-            res.redirect('/profile');
+            res.redirect('/content');
         });
 
     return router;
