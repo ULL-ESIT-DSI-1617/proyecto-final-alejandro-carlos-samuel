@@ -39,7 +39,7 @@ jspm_packages
 # Operative System files
 .DS_Store
 
- Rakefile
+Rakefile
  
- config/db.js
- config/auth.js
+config/db.js
+config/auth.js
