@@ -5,7 +5,7 @@ let getBooks = require('./getbooks.js');
 let getUserBooks = getBooks.getUserBooks;
 let getBookInfo = getBooks.getBookInfo;
 let deleteBook = require('./deletebooks.js');
-
+let findBook = require('./findbooks.js');
 
 module.exports = function(passport) {
 
@@ -31,8 +31,6 @@ module.exports = function(passport) {
 
     // BOOKS ===============================
     router.get('/content', isLoggedIn, function(req, res) {
-        //let myBooks = getBooks(req.user);
-        //console.log(myBooks);
         getUserBooks(req.user)
             .then((response) => {
                 //console.log(response);
@@ -69,10 +67,25 @@ module.exports = function(passport) {
 
     // FIND ===============================
     router.get('/find', isLoggedIn, function(req, res) {
-        res.render('content/find.ejs', {
-            user: req.user
-        });
-    });
+      console.log("hola");
+      //console.log(req.query.find);
+      findBook(req.query.find)
+          .then((response) => {
+              //console.log(response);
+              res.render('content/find.ejs', {
+                  user: req.user,
+                  book: response
+              });
+          })
+          .catch((response) => {
+              console.log("Error al buscar libros");
+              res.render('content/find.ejs', {
+                  user: req.user,
+                  book: response
+              });
+          });
+
+      });
 
     //DELETE =============
     
@@ -83,9 +96,8 @@ module.exports = function(passport) {
                 res.redirect('/content');
             })
             .catch((response) => {
-                console.log("Error al mostrar libros");
+                console.log("Error al eliminar libro");
             });
-
     });
 
 
@@ -177,5 +189,5 @@ function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
         return next();
 
-    res.redirect('/');
+    res.redirect('/login');
 }
