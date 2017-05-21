@@ -2,8 +2,9 @@ let express = require('express');
 let router = express.Router();
 let createBook = require('./createbooks.js');
 let getBooks = require('./getbooks.js');
-let getBookInfo = getBooks.getBookInfo;
 let getUserBooks = getBooks.getUserBooks;
+let getBookInfo = getBooks.getBookInfo;
+
 
 module.exports = function(passport) {
 
@@ -33,7 +34,7 @@ module.exports = function(passport) {
         //console.log(myBooks);
         getUserBooks(req.user)
             .then((response) => {
-                console.log(response);
+                //console.log(response);
                 res.render('content/content.ejs', {
                     user: req.user,
                     book: response
@@ -44,11 +45,11 @@ module.exports = function(passport) {
             });
 
     });
-    
+
     router.get('/content/:id', isLoggedIn, function(req, res) {
         getBookInfo(req.params.id)
             .then((response) => {
-                console.log(response);
+                //console.log(response);
                 res.render('content/bookinfo.ejs', {
                     user: req.user,
                     book: response
@@ -61,9 +62,9 @@ module.exports = function(passport) {
     });
 
     router.post('/content', isLoggedIn, function(req, res) {
-    createBook(req.body, req.user);
-    res.redirect('/content');
-  });
+        createBook(req.body, req.user);
+        res.redirect('/content');
+    });
 
     // FIND ===============================
     router.get('/find', isLoggedIn, function(req, res) {
@@ -71,7 +72,7 @@ module.exports = function(passport) {
             user: req.user
         });
     });
-    
+
     //DELETE =============
     /*
     router.get('/delete/:title', isLoggedIn, function(req, res) {
