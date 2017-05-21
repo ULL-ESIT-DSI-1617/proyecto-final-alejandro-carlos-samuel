@@ -2,6 +2,8 @@ let express = require('express');
 let router = express.Router();
 let createBook = require('./createbooks.js');
 let getBooks = require('./getbooks.js');
+let getBookInfo = getBooks.getBookInfo;
+let getUserBooks = getBooks.getUserBooks;
 
 module.exports = function(passport) {
 
@@ -26,10 +28,10 @@ module.exports = function(passport) {
     });
 
     // BOOKS ===============================
-    router.get('/content', isLoggedIn, function(req, res) {
+    router.get('/content/', isLoggedIn, function(req, res) {
         //let myBooks = getBooks(req.user);
         //console.log(myBooks);
-        getBooks(req.user)
+        getUserBooks(req.user)
             .then((response) => {
                 console.log(response);
                 res.render('content/content.ejs', {
@@ -42,10 +44,25 @@ module.exports = function(passport) {
             });
 
     });
+    
+    router.get('/content/:id', isLoggedIn, function(req, res) {
+        getBookInfo(req.params.id)
+            .then((response) => {
+                console.log(response);
+                res.render('content/bookinfo.ejs', {
+                    user: req.user,
+                    book: response
+                });
+            })
+            .catch((response) => {
+                console.log("Error al mostrar libros");
+            });
+
+    });
 
     router.post('/content', isLoggedIn, function(req, res) {
     createBook(req.body, req.user);
-    res.redirect(req.get('referer'));
+    res.redirect('/content');
   });
 
     // FIND ===============================
@@ -54,8 +71,16 @@ module.exports = function(passport) {
             user: req.user
         });
     });
-
-
+    
+    //DELETE =============
+    /*
+    router.get('/delete/:title', isLoggedIn, function(req, res) {
+      deleteBook(req.params.title);
+      .then((response) => {
+        res
+      })
+    })
+    */
 
     // =============================================================================
     // AUTHENTICATE (FIRST LOGIN) ==================================================

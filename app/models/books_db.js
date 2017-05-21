@@ -14,6 +14,7 @@ var bookSchema = mongoose.Schema({
     type: Date,
     default: Date.now
   },
+  img: String,
   loan: {
     state: Boolean,
     loanDate: Date,
