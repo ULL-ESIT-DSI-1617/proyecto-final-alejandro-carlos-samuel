@@ -38,3 +38,5 @@ jspm_packages
 
 # Operative System files
 .DS_Store
+
+ Rakefile

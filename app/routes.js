@@ -66,8 +66,6 @@ module.exports = function(passport) {
 
     // FIND ===============================
     router.get('/find', isLoggedIn, function(req, res) {
-      console.log("hola");
-      //console.log(req.query.find);
       findBook(req.query.find)
           .then((response) => {
               //console.log(response);
