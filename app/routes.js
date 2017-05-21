@@ -87,14 +87,7 @@ module.exports = function(passport) {
             });
 
     });
-    /*
-    router.get('/delete/:title', isLoggedIn, function(req, res) {
-      deleteBook(req.params.title);
-      .then((response) => {
-        res
-      })
-    })
-    */
+
 
     // =============================================================================
     // AUTHENTICATE (FIRST LOGIN) ==================================================
