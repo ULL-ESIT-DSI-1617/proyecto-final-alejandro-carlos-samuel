@@ -4,36 +4,36 @@ var Book = require('../app/models/books_db');
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
 function getUserBooks(user) {
-  const queryResult = new Promise(function(resolve, reject) {
-    Book.find({
-      owner: user._id.toString()
-    }, (err, book) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(book);
+    const queryResult = new Promise(function(resolve, reject) {
+        Book.find({
+            owner: user._id.toString()
+        }, (err, book) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(book);
+        });
     });
-  });
 
-  return queryResult;
+    return queryResult;
 }
 
 function getBookInfo(book) {
-  const queryResult = new Promise(function(resolve, reject) {
-    Book.find({
-      _id: book
-    }, (err, bookSearch) => {
-      if (err) {
-        reject(err);
-      }
-      resolve(bookSearch);
+    const queryResult = new Promise(function(resolve, reject) {
+        Book.find({
+            _id: book
+        }, (err, bookSearch) => {
+            if (err) {
+                reject(err);
+            }
+            resolve(bookSearch);
+        });
     });
-  });
 
-  return queryResult;
+    return queryResult;
 }
 
 module.exports = {
-  getUserBooks,
-  getBookInfo
+    getUserBooks,
+    getBookInfo
 };
