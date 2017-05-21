@@ -15,6 +15,10 @@
   color: #19d0bf;
 }
 
+nav .input-field label i{
+  color: #19d0bf;
+}
+
 #servicio, #equipo {
   padding-top: 6rem;
 }
@@ -124,5 +128,10 @@ label {
   font-style: italic;
   font-weight: bold;
   font-size: xx-large;
+}
+
+#search {
+  margin-top: 40px;
+  background-color: white;
 }
 
